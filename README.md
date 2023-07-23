@@ -21,3 +21,7 @@ It has six components named:
 **Button**: Add task button in footer,
 
 **Completed**: the button on the left side of the footer that shows the tasks that have not been done.
+
+# Note
+
+This project is not responsive.
