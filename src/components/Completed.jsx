@@ -5,7 +5,7 @@ import { FaEyeSlash } from 'react-icons/fa';
 const Completed = ({ cssClass, all, completed }) => {
 
     const [eye, setEye] = useState(<FaEye />);
-    const [change, setChange] = useState(false);
+    const [change, setChange] = useState(true);
     
     const changeEye = () => {
         change ? setEye(<FaEyeSlash />) : setEye(<FaEye />);
