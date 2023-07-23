@@ -12,7 +12,7 @@ body {
 
 .container {
   width: 55%;
-  min-height: 200px;
+  min-height: 190px;
   margin: 20px auto;
   background: #fff;
   border-radius: 5px;
@@ -28,7 +28,7 @@ body {
 
 .tasks-manage {
   position: relative;
-  min-height: 70px;
+  min-height: 30px;
   margin: 20px 0;
 }
 
@@ -54,7 +54,7 @@ body {
 
 .btn {
   border: none;
-  width: 100px;
+  width: 120px;
   height: 30px;
   border-radius: 5px;
 }
@@ -102,6 +102,7 @@ body {
 
 .input-text.checked {
   text-decoration: line-through;
+  color: gray;
 }
 
 .input-text::placeholder {

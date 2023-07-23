@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const [tasks, setTasks] = useState([]);
+  const [completed, setCompleted] = useState([]);
 
   // Add Task
   const addTask = (id, text) => {
@@ -15,18 +16,19 @@ const App = () => {
 
   // Add Check
   const addCheck = (id, newCheck) => {
+    // Handle Completed
+    if(newCheck) {
+      const newCompleted = {...newCheck, id: id};
+      setCompleted([...completed, newCompleted])
+    }
+    else {
+      setCompleted(
+        completed.filter(comp => comp.id !== id)
+      )
+    }
+    // Handle Tasks
     setTasks(
-      tasks.map(task => {
-        if(task.id === id) {
-          if(task.body !== '') { // Empty
-            return { ...task, checked: newCheck }
-          } else {
-            return task
-          }
-        } else {
-          return task;
-        }
-      })
+      tasks.map(task => task.id === id ? {...task, checked: newCheck} : task)
     )
   }
 
@@ -41,6 +43,7 @@ const App = () => {
   // Delete Task
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id))
+    setCompleted(completed.filter(comp => comp.id !== id))
   }
 
   return (
@@ -49,7 +52,7 @@ const App = () => {
       <div className="tasks-manage">
         {tasks.length > 0 ? <Tasks tasks={tasks} onAdd={addTask} onDelete={deleteTask} onCheck={addCheck} /> : <p className="text">What is your next challenge?</p>}
       </div>
-      <Footer onShow={showTask} />
+      <Footer onShow={showTask} tasks={tasks} completed={completed.length} />
     </div>
   )
 }

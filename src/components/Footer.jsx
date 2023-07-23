@@ -1,9 +1,10 @@
-import Button from "./Button"
+import Button from "./Button";
+import Completed from "./Completed";
 
-const Footer = ({ onShow }) => {
+const Footer = ({ onShow, tasks, completed }) => {
   return (
     <footer className="footer">
-      <p style={{ color: 'gray' }}>No tasks</p>
+      {tasks.length > 0 ? <Completed cssClass={'btn btn-footer'} all={tasks.length} completed={completed} /> : <p style={{ color: 'gray' }}>No tasks</p>}
       <Button text={'Add task'} cssClass={'btn btn-footer'} onShow={onShow} />
     </footer>
   )
