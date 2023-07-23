@@ -1,21 +1,11 @@
-import { useState } from 'react';
 import { FaEye } from 'react-icons/fa';
 import { FaEyeSlash } from 'react-icons/fa';
 
-const Completed = ({ cssClass, all, completed }) => {
-
-    const [eye, setEye] = useState(<FaEye />);
-    const [change, setChange] = useState(true);
-    
-    const changeEye = () => {
-        change ? setEye(<FaEyeSlash />) : setEye(<FaEye />);
-        setChange(!change);
-    }
-
+const Completed = ({ cssClass, all, completed, change, onChange }) => {
     return (
-        <button onClick={() => changeEye()} className={cssClass} style={{ color: "gray", width: '150px' }} >
+        <button onClick={() => onChange()} className={cssClass} style={{ color: "gray", width: '150px' }} >
             <span style={{ marginRight: '5px' }} >
-                {eye}
+                {change ? <FaEyeSlash /> : <FaEye />}
             </span>
             Completed {completed} of {all}
         </button>

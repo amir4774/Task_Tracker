@@ -1,6 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
 
-const Task = ({ task, onAdd, onDelete, onCheck }) => {
+const Task = ({ task, onAdd, onDelete, onCheck, onCompleted }) => {
 
   const sendValue = (text) => {
     onAdd(task.id, text);
@@ -11,7 +11,7 @@ const Task = ({ task, onAdd, onDelete, onCheck }) => {
   } 
 
   return (
-    <div className="task">
+    <div className={`task ${task.checked && onCompleted ? 'completed' : ''}`}>
       <input type="checkbox" className="check-box"  value={task.checked} checked={task.checked} onChange={(e) => sendCheck(e.currentTarget.checked)} />
       <input type="text" placeholder="Title..." className={`input-text ${task.checked ? 'checked' : ''}`} value={task.body} onChange={(e) => sendValue(e.target.value)}/>
       <FaTimes onClick={() => onDelete(task.id)} style={{ marginLeft: '30px', color: '#dd0000', cursor: 'pointer'}} />

@@ -6,8 +6,14 @@ import Footer from "./components/Footer";
 const App = () => {
   const [tasks, setTasks] = useState([]);
   const [completed, setCompleted] = useState([]);
+  const [change, setChange] = useState(false);
 
-  // Add Task
+  // Show Completed
+  const changeEye = () => {
+    setChange(!change);
+  }
+
+  // Add Text To Body
   const addTask = (id, text) => {
     setTasks(
       tasks.map(task => task.id === id ? { ...task, body: text} : task)
@@ -50,9 +56,16 @@ const App = () => {
     <div className="container">
       <Header />
       <div className="tasks-manage">
-        {tasks.length > 0 ? <Tasks tasks={tasks} onAdd={addTask} onDelete={deleteTask} onCheck={addCheck} /> : <p className="text">What is your next challenge?</p>}
+        {tasks.length > 0 ? <Tasks
+                                  tasks={tasks}
+                                  onAdd={addTask} 
+                                  onDelete={deleteTask} 
+                                  onCheck={addCheck} 
+                                  onCompleted={change} 
+                                  onAllChecked={completed.length === tasks.length}/> 
+                                  : <p className="text">What is your next challenge?</p>}
       </div>
-      <Footer onShow={showTask} tasks={tasks} completed={completed.length} />
+      <Footer onShow={showTask} tasks={tasks} completed={completed.length} change={change} onChange={changeEye} />
     </div>
   )
 }
