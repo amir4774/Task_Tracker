@@ -8,7 +8,7 @@ It has six components named:
 
 **Main**: Renders 'App' component in the root,
 
-**App**: It organizes the rest of the componentsو
+**App**: It organizes the rest of the components,
 
 **Header**: It only has 'My checklist' header,
 
