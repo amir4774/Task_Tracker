@@ -12,7 +12,7 @@ It has six components named:
 
 **Header**: It only has 'My checklist' header,
 
-**Tasks**: The main part is to show the tasks and and call Task for each task,
+**Tasks**: The main part is to show the tasks and call Task for each task,
 
 **Task**: Shows each task,
 
@@ -20,7 +20,7 @@ It has six components named:
 
 **Button**: Add task button in footer,
 
-**Completed**: the button on the left side of the footer that shows the tasks that have not been done.
+**Completed**: The button on the left side of the footer that shows the tasks that have not been done.
 
 # Note
 
