@@ -26,12 +26,6 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.tasks-manage {
-  position: relative;
-  min-height: 30px;
-  margin: 20px 0;
-}
-
 .text {
   position: absolute;
   left: 50%;
@@ -77,9 +71,15 @@ body {
   font-size: 0.9rem;
 }
 
+.tasks-manage {
+  position: relative;
+  min-height: 30px;
+  margin: 20px 0;
+}
+
 .task {
   display: flex;
-  margin: 10px 10px;
+  margin: 20px 10px;
   width: 100%;
   height: 100%;
   color: #000;
@@ -91,7 +91,7 @@ body {
 }
 
 .check-box {
-  width: 50px;
+  width: 5%;
   accent-color: #333;
   cursor: pointer;
   margin-right: 8px;
@@ -101,7 +101,9 @@ body {
   border: none;
   outline: none;
   font-size: 1.2rem;
-  width: 80%;
+  width: 82%;
+  padding: 2px;
+  border-radius: 2px;
 }
 
 .input-text.checked {
@@ -115,4 +117,47 @@ body {
 
 .input-text:focus {
   outline: 1px solid steelblue;
+}
+
+.delete {
+  position: relative;
+  width: 13%;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #dd0000; 
+  cursor: pointer;
+}
+
+@media (max-width: 920px) {
+  .container {
+    width: 90%;
+  }
+
+  .header {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .task {
+    justify-content: space-between;
+  }
+
+  .check-box {
+    width: 3%;
+  }
 }
