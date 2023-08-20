@@ -1,17 +1,16 @@
+import { useSelector } from "react-redux";
 import Task from "./Task";
 
-const Tasks = ({ tasks, onAdd, onDelete, onCheck, onCompleted, onAllChecked }) => {
+const Tasks = () => {
+
+  const tasks = useSelector(state => state.task.tasks);
+  const change = useSelector(state => state.eye.change);
+  const completed = useSelector(state => state.complete.completed); 
+
   return (
     <>
-      {onCompleted && onAllChecked ? <p className="text">All done. Enjoy your time!</p> : 
-                                                   tasks.map((task, index) => 
-                                                   <Task 
-                                                    task={task} 
-                                                    onAdd={onAdd} 
-                                                    onDelete={onDelete} 
-                                                    onCheck={onCheck} 
-                                                    onCompleted={onCompleted} 
-                                                    key={index} />)}
+      {change && completed.length === tasks.length ? <p className="text">All done. Enjoy your time!</p> :
+        tasks.map((task, index) => <Task task={task} key={index} />)}
     </>
   )
 }
