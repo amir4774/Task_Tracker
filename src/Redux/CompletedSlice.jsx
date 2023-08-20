@@ -1,10 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+const tasksChecked = tasks.filter(task => task.checked);
+
 const CompletedSlice = createSlice({
     name: 'complete',
 
     initialState: {
-        completed: []
+        completed: tasksChecked
     },
 
     reducers: {

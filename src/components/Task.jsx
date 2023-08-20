@@ -44,7 +44,7 @@ const Task = ({ task }) => {
 
   return (
     <div className={`task ${task.checked && change ? 'completed' : ''}`}>
-      <input type="checkbox" className="check-box" value={task.checked} checked={task.checked} onChange={(e) => addCheckHandler(e.currentTarget.checked)} />
+      <input type="checkbox" className="check-box" value={task.checked} checked={task.checked} onChange={(e) => addCheckHandler(e.currentTarget.checked)} /> <span className='checkmark'></span>
       <input type="text" placeholder="Title..." className={`input-text ${task.checked ? 'checked' : ''}`} value={task.body} onChange={(e) => addTaskHandler(e.target.value)} />
       <div className='delete'>
         <FaTimes onClick={() => deleteTaskHandler(task.id)} className='delete-btn' />

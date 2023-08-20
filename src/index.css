@@ -78,6 +78,7 @@ body {
 }
 
 .task {
+  position: relative;
   display: flex;
   margin: 20px 10px;
   width: 100%;
@@ -91,13 +92,47 @@ body {
 }
 
 .check-box {
-  width: 5%;
-  accent-color: #333;
+  position: absolute;
+  opacity: 0;
+  z-index: 5;
   cursor: pointer;
-  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
+
+.checkmark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.check-box:checked+.checkmark {
+  background-color: #333;
+}
+
+.check-box:checked+.checkmark::after {
+  display: block;
 }
 
 .input-text {
+  margin-left: 30px;
   border: none;
   outline: none;
   font-size: 1.2rem;
@@ -130,7 +165,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #dd0000; 
+  color: #dd0000;
   cursor: pointer;
 }
 
@@ -146,7 +181,7 @@ body {
 
 @media (max-width: 600px) {
   .container {
-    width: 100%;
+    width: 95%;
   }
 
   .header {
@@ -155,9 +190,5 @@ body {
 
   .task {
     justify-content: space-between;
-  }
-
-  .check-box {
-    width: 3%;
   }
 }
