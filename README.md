@@ -1,6 +1,6 @@
 # Project Overview
 
-A task tracker implemented using React.
+A task tracker implemented using React. That you can add, delete and edit tasks.
 
 # Components
 
