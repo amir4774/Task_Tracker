@@ -21,3 +21,6 @@ It has six components named:
 **Button**: Add task button in footer,
 
 **Completed**: The button on the left side of the footer that shows the tasks that have not been done.
+
+# Update
+On August 8, 2023, I used Redux instead of passing props
