@@ -96,16 +96,16 @@ body {
   opacity: 0;
   z-index: 5;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 .checkmark {
   position: absolute;
   top: 4px;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   background-color: #ccc;
   border-radius: 4px;
 }
@@ -114,10 +114,10 @@ body {
   content: "";
   position: absolute;
   display: none;
-  left: 6px;
+  left: 8px;
   top: 2px;
   width: 6px;
-  height: 12px;
+  height: 15px;
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
